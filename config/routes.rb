@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   root 'users#top'
   end
+
+  get '/youtube', to: 'youtubes#index'
 end
 

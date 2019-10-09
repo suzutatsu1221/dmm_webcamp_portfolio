@@ -3,7 +3,7 @@ class YoutubesController < ApplicationController
 
 	def find_videos(keyword, after: 1.year.ago, before: Time.now)
 		service = Google::Apis::YoutubeV3::YouTubeService.new
-		service.key = AIzaSyCwYwYxXSuTlAFUOxnzmZyYajTrdAWtovo
+		service.key = GOOGLE_API_KEY
 
 		next_page_token = nil
 		opt = {
@@ -19,6 +19,7 @@ class YoutubesController < ApplicationController
 	end
 
 	def index
-		@youtube_data = find_videos('ラファエル')
+
+		@youtube_data = find_videos(params[:search])
 	end
 end
