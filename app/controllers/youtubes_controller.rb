@@ -9,11 +9,13 @@ class YoutubesController < ApplicationController
 		opt = {
 			q: keyword,
 			type: 'video',
-			max_results: 10,
-			order: :date,
+			max_results: 2,
+			order: :viewCount,
 			page_token: next_page_token,
 			published_after: after.iso8601,
-			published_before: before.iso8601
+			published_before: before.iso8601,
+			#safeSearch: :moderate,
+			#channelTitle: :string  #入れるとエラー出る
 		}
 		service.list_searches(:snippet, opt)
 	end
@@ -21,5 +23,8 @@ class YoutubesController < ApplicationController
 	def index
 
 		@youtube_data = find_videos(params[:search])
+	end
+
+	def search
 	end
 end
