@@ -1,3 +1,5 @@
+<% breadcrumb :index %>
+
 <%= form_tag("/youtube/index", method: "get") do %>
   <%= label_tag(:search, "キーワードを入力") %>
   <%= text_field_tag(:search) %>
