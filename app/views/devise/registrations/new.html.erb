@@ -22,9 +22,9 @@
   <div class="field">
       <p class="sign_up_subjects">性別</p>
     <div class="sign_up_items">
-      <%= f.radio_button :sex, autofocus: true, autocomplete: "male" %>男性
-      <%= f.radio_button :sex, autofocus: true, autocomplete: "female" %>女性
-      <%= f.radio_button :sex, autofocus: true, autocomplete: "others" %>その他
+      <%= f.radio_button :sex, "male" %>男性
+      <%= f.radio_button :sex, "female" %>女性
+      <%= f.radio_button :sex, "others" %>その他
   </div>
   </div>
   <div class="field">
@@ -51,7 +51,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "確認画面へ進む", :class =>"btn btn-primary" %>
   </div>
 </div>
 </div>
