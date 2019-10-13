@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .sign_up_subjects {
+ 	display: inline-block;
+ 	margin-right: 25px;
+ }
+ .sign_up_items{
+ 	display: inline-block;
+ }

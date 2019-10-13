@@ -1,44 +1,60 @@
+<div style="margin: 50px 100px">
 <h2>新規登録</h2>
-
+<div style="padding-left: 50px">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "姓" %>
+      <p class="sign_up_subjects">お名前</p>
+    <div class="sign_up_items">
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    </div>
+    <div class="sign_up_items">
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+      <p class="sign_up_subjects">メールアドレス</p>
+    <div class="sign_up_items">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <p class="sign_up_subjects">性別</p>
+    <div class="sign_up_items">
+      <%= f.radio_button :sex, autofocus: true, autocomplete: "male" %>男性
+      <%= f.radio_button :sex, autofocus: true, autocomplete: "female" %>女性
+      <%= f.radio_button :sex, autofocus: true, autocomplete: "others" %>その他
+  </div>
   </div>
   <div class="field">
-    <%= f.label :sex %><br />
-    <%= f.radio_button :sex, autofocus: true, autocomplete: "sex" %>
+      <p class="sign_up_subjects">誕生日</p>
+    <div class="sign_up_items">
+      <%= f.date_select :birthday, use_month_numbers: true, start_year: 1950, prompt: {year: "年", month: "月", day: "日"} %>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :old %><br />
-    <%= f.date_select :old, autofocus: true, autocomplete: "old" %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <p class="sign_up_subjects">パスワード</p>
+    <div class="sign_up_items">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <p class="sign_up_subjects">パスワード(確認用)</p>
+    <div class="sign_up_items">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
   </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+</div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
