@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   root 'users#top'
   end
+  get '/youtube/search', to: 'youtubes#search'
+  get '/youtube/index', to: 'youtubes#index'
 end
 
