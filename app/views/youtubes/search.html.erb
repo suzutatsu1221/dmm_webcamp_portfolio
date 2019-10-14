@@ -1,19 +1,35 @@
 <% breadcrumb :search %>
-
+<section>
 <h2>キーワードで探す</h2>
 <%= form_tag("/youtube/index", method: "get") do %>
   <%= label_tag(:search, "キーワードを入力") %>
   <%= text_field_tag(:search) %>
   <%= submit_tag("探す") %>
 <% end %>
+</section>
 
+<section>
 <h2>人気のジャンルから探す</h2>
 <p>健康</p>
 <%= link_to "ウォーキング", youtube_index_path(:search =>"ウォーキング") %>
 <%= link_to "ガーデニング", youtube_index_path(:search =>"ガーデニング") %>
 <%= link_to "筋トレ", youtube_index_path(:search =>"筋トレ") %>
-
 <p>スポーツ</p>
 <p>芸術</p>
+</section>
 
-<h2>オススメ動画紹介</h2>
+<section>
+	<h2>検索ワードランキング</h2>
+	<table>
+		<% @search_ranks.each.with_index do |note,i| %>
+		<tr>
+			<td>
+				<%= "第#{ i+1 }位" %>
+			</td>
+			<td>
+	            <%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %>
+	        </td>
+	    </tr>
+	    <% end %>
+    </table>
+</section>

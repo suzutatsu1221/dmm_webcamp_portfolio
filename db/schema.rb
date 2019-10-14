@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_070910) do
+ActiveRecord::Schema.define(version: 2019_10_14_054554) do
+
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "search_name"
+    t.integer "search_count", default: 0
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
