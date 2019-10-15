@@ -11,5 +11,3 @@ function update(e) {
 	e.target.validationMessage;
 	console.log(type, validationMessage);
 }
-
-

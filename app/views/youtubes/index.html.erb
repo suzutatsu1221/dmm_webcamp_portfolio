@@ -6,8 +6,6 @@
   <%= submit_tag("検索する") %>
 <% end %>
 
-<%= link_to "検索画面トップへ", youtube_search_path %>
-
 
 <% @youtube_data.items.each do |item| %>
   <% snippet = item.snippet %>
