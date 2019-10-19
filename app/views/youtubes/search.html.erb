@@ -22,14 +22,9 @@
 	<h2>検索ワードランキング</h2>
 	<table>
 		<% @search_ranks.each.with_index do |note,i| %>
-		<tr>
-			<td>
-				<%= "第#{ i+1 }位" %>
-			</td>
-			<td>
-	            <%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %>
-	        </td>
-	    </tr>
+		<ol class="Rankstyle-svg">
+            <li><%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %></li>
+　　　　　</ol>
 	    <% end %>
     </table>
 </section>
