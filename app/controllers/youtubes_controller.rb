@@ -16,6 +16,10 @@ class YoutubesController < ApplicationController
 			published_before: before.iso8601,
 			#safeSearch: :moderate,
 			#channelTitle: :string  #入れるとエラー出る
+			#description: string,
+			#published_at: datetime
+			#videoLicense: string.youtube
+			statistics: viewCount
 		}
 		service.list_searches(:snippet, opt)
 

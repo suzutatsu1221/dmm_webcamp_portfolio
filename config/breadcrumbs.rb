@@ -8,7 +8,7 @@ crumb :search do
 end
 
 crumb :index do
-	link "検索結果", youtube_index_path
+	link "#{params[:search] }での検索結果", youtube_index_path
 	parent :search
 end
 

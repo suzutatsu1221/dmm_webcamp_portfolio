@@ -1,3 +1,4 @@
+<div><%= render '/shared/header' %></div>
 <% breadcrumb :index %>
 
 <%= form_tag("/youtube/index", method: "get") do %>
@@ -9,7 +10,25 @@
 
 <% @youtube_data.items.each do |item| %>
   <% snippet = item.snippet %>
-  <p><%= snippet.title %></p>
-  <p><%= snippet.published_at %><%= snippet.channel_title %></p>
-  <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <table class="searched_container">
+        <tr>
+        	<td>
+  	            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	        </td>
+  	        <td>
+  	        	<div class="searched_items_detail">
+  	        	    <div class="searched_items_detail_top">
+  	                    <h2 class="searched_items_title"><%= snippet.title %></h2>
+                        <p class="searched_items_description"><%= snippet.description %></p>
+                    </div>
+                    <div class="searched_items_detail_bottom">
+                        <p class="searched_items_channel_title">チャンネル名：<%= snippet.channel_title %></p>
+                        <p class="searched_items_published_at">投稿日時：<%= snippet.published_at %></p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
 <% end %>
+
+
