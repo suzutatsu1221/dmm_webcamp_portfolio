@@ -1,30 +1,57 @@
-<% breadcrumb :search %>
-<section>
-<h2>キーワードで探す</h2>
-<%= form_tag("/youtube/index", method: "get") do %>
-  <%= label_tag(:search, "キーワードを入力") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("探す") %>
-<% end %>
-</section>
+<div><%= render '/shared/header' %></div>
+<div><% breadcrumb :search %></div>
+<div class="search_container">
+    <div style="width:50%; float:left;">
+        <section>
+            <h2>キーワードで探す</h2>
+                <%= form_tag("/youtube/index", method: "get") do %>
+                <div class="keyword_items">
+                    <i class="fas fa-arrow-down"></i><%= label_tag(:search, "キーワードを入力してください") %>
+                    <div><%= text_field_tag(:search) %>
+                        <span style="padding-left: 20px;"><%= submit_tag("探す") %></span>
+                    </div>
+                </div>
+                <% end %>
+            </section>
+        <section style="padding-top: 50px;">
+            <h2>人気のジャンルから探す</h2>
+            <h3 class="genres_icon"><i class="fas fa-walking"></i>健康</h3>
+                <%= link_to "ウォーキング", youtube_index_path(:search =>"ウォーキング"), :class => "genres_items" %>
+                <%= link_to "ヨガ", youtube_index_path(:search =>"ヨガ"), :class => "genres_items" %>
+                <%= link_to "筋トレ", youtube_index_path(:search =>"筋トレ"), :class => "genres_items" %>
+            <h3 class="genres_icon"><i class="fas fa-baseball-ball"></i>スポーツ</h3>
+                <%= link_to "ゴルフ", youtube_index_path(:search =>"ゴルフ"), :class => "genres_items" %>
+                <%= link_to "水泳", youtube_index_path(:search =>"水泳"), :class => "genres_items" %>
+                <%= link_to "テニス", youtube_index_path(:search =>"テニス"), :class => "genres_items" %>
+            <h3 class="genres_icon">もの作り</h3>
+                <%= link_to "日曜大工", youtube_index_path(:search =>"日曜大工"), :class => "genres_items" %>
+                <%= link_to "手芸", youtube_index_path(:search =>"手芸"), :class => "genres_items" %>
+                <%= link_to "料理", youtube_index_path(:search =>"料理"), :class => "genres_items" %>
+                <%= link_to "お菓子", youtube_index_path(:search =>"お菓子作り"), :class => "genres_items" %>
+            <h3 class="genres_icon">その他</h3>
+                <%= link_to "英語", youtube_index_path(:search =>"英語"), :class => "genres_items" %>
+                <%= link_to "絵画", youtube_index_path(:search =>"絵画"), :class => "genres_items" %>
+                <%= link_to "旅行", youtube_index_path(:search =>"旅行"), :class => "genres_items" %>
+                <%= link_to "囲碁", youtube_index_path(:search =>"囲碁"), :class => "genres_items" %>
+                <%= link_to "将棋", youtube_index_path(:search =>"将棋"), :class => "genres_items" %>
+        </section>
+    </div>
 
-<section>
-<h2>人気のジャンルから探す</h2>
-<p>健康</p>
-<%= link_to "ウォーキング", youtube_index_path(:search =>"ウォーキング") %>
-<%= link_to "ガーデニング", youtube_index_path(:search =>"ガーデニング") %>
-<%= link_to "筋トレ", youtube_index_path(:search =>"筋トレ") %>
-<p>スポーツ</p>
-<p>芸術</p>
-</section>
-
-<section>
-	<h2>検索ワードランキング</h2>
-	<table>
-		<% @search_ranks.each.with_index do |note,i| %>
-		<ol class="Rankstyle-svg">
-            <li><%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %></li>
-　　　　　</ol>
-	    <% end %>
-    </table>
-</section>
+    <div style="width:50%; float:left;">
+        <section>
+	        <h2>検索ワードランキング</h2>
+	        <table>
+		        <% @search_ranks.each.with_index do |note,i| %>
+		        <tr style="line-height:60px">
+			        <td>
+				        <%= "第#{ i+1 }位" %>
+			        </td>
+			        <td class="ranking_name">
+	                    <%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %>
+	                </td>
+	            </tr>
+	            <% end %>
+            </table>
+        </section>
+    </div>
+</div>

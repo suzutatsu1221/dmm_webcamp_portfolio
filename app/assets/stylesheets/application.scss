@@ -34,139 +34,48 @@ input[type="text"],
     }
 
 select:valid {
-    height: 30px;
-    width: 150px;
-    font-size: 18px;
+  height: 30px;
+  width: 150px;
+  font-size: 18px;
 }
-input[type="submit" i] {
-    height: 60px;
-    width:150px;
-    font-size: 30px;
+input[type="submit" i] {  /* searchページの検索ボタン*/
+  position: relative;
+  background-color: #f7d034;
+  border-radius: 4px;
+  line-height: 30px;
+  width:100px;
+  box-shadow: 0 3px 0 #f7ba59;
+  -webkit-transition: none;
+  transition: none;
+  font-size: 20px;
 }
-
+input[type="submit" i]:hover {  /* searchページの検索ボタンにカーソルが乗った時*/
+  top: -4px;
+  box-shadow: 0 7px 0 #f7ba59;
+}
+input[type="submit" i]:active { /* searchページの検索ボタンを押した時*/
+  top: 3px;
+  box-shadow: none;
+}
 .general_text{
     font-size: 20px;
     line-height: 160%;
 }
 
-.button {
-  height:200px;
-  position: relative;
-  border-radius: 4px;
-  color: #fff;
-  line-height: 50px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-transition: none;
-  transition: none;
-  text-shadow: 0px 1px 0px #f56778;
+.search_container {
+  padding-top: 40px;
 }
-.button,
-.button:hover {
-  border-bottom: 4px solid #cb5462;
-  background-color: #f56778;
-  background-image: -webkit-linear-gradient(top, #f997b0, #f56778);
-  background-image: linear-gradient(to bottom, #f997b0, #f56778);
-  box-shadow: inset 1px 1px 0 #fbc1d0;
+.genres_items {
+  margin-left: 30px;
+  font-size: 20px;
 }
-.button::before,
-.button::after {
-  bottom: -1px;
-  left: -1px;
-  width: 200px;
-  height: 50px;
-  border: 1px solid #ee8090;
-  border-bottom: 1px solid #b84d5a;
-  border-radius: 4px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-transition: none;
-  transition: none;
+.genres_icon {
+  padding-left: 20px;
 }
-.button::before {
-  height: 48px;
-  bottom: -4px;
-  border-top: 0;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 1px 1px 0px #bfbfbf;
+.keyword_items {
+  padding-left: 20px;
 }
-.button:hover {
-  background: #f56778;
-  background-image: -webkit-linear-gradient(top, #f56778, #f997b0);
-  background-image: linear-gradient(to bottom, #f56778, #f997b0);
-  color: #913944;
-  text-shadow: 0px 1px 0px #f9a0ad;
-}
-.button:active {
-  bottom: -4px;
-  margin-bottom: 4px;
-  border: none;
-  box-shadow: 1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, .3);
-}
-.button:active::before,
-.button:active::after {
-  border: none;
-  box-shadow: none;
-}
-
-.Rankstyle {
-  counter-reset:ctr-ranking;           /* カウンターをリセット */
-  text-align:left;                     /* 左寄せ */
-  font-size: 18px;                     /* フォントサイズ */
-  margin-left:20px;                    /* 左の余白高さ */
-}
-.Rankstyle li  {
-  position   : relative;               /* 指定した分だけ相対的に移動 */
-  line-height: 2;                      /* 行の高さ */
-}
-.Rankstyle li:nth-child(1):before {
-  position: absolute;                  /* 親要素を基準 */
-  top: 0;                              /* 上限より表示 */
-  left: -35px;                         /* 箇条書きリストの左側に表示 */
-  content:"";                          /* content 追加 */
-  width: 0;                            /* 幅ゼロ */
-  height: 0;                           /* 高さゼロ */
-  border-left: 15px solid transparent;  /* 以下３行の */
-  border-right: 15px solid transparent; /* borderの指定で */
-  border-bottom: 30px solid #7f7f00;   /* 三角形を作成 */
-}
-.Rankstyle li:nth-child(1):after {
-  position: absolute;                  /* 親要素を基準 */
-  top: 0;                              /* 上限より表示 */
-  left: -35px;                         /* 箇条書きリストの左側に表示 */
-  content: counter(ctr-ranking, decimal); /* カウンタ追加 */
-  counter-increment: ctr-ranking; /* カウンタの増分指定 */
-  color: #000;                         /* 文字の色の指定 */
-  font-size: 11px;                     /* 文字サイズの指定 */
-  padding: 1px 0px;                    /* 余白の指定 */
-  line-height: 0.6;                    /* 文字の表示位置調整 */
-  width: 0;                            /* 幅ゼロ */
-  height: 0;                           /* 高さゼロ */
-  border: 15px solid #7f7f00;          /* 以下２行のbordeの指定で */
-  border-top: 15px solid transparent;  /* 山型を作成 */
-}
-.Rankstyle li:nth-child(2):before {
-  position: absolute;                  /* 親要素を基準 */
-  top: 0;                              /* 上限より表示 */
-  left: -35px;                         /* 箇条書きリストの左側に表示 */
-  background: #7f4600;                 /* マークの色 */
-  content: counter(ctr-ranking, decimal); /* カウンタ追加 */
-  counter-increment: ctr-ranking;      /* カウンタの増分指定 */
-  color: #000;                         /* 文字の色の指定 */
-  font-size: 10px;                     /* 文字サイズの指定 */
-  padding: 5px 10px;                   /* 余白の指定 */
-  border-radius: 50%;                  /* 角丸を指定 */
-}
-.Rankstyle li:nth-child(3):before {
-  position: absolute;                  /* 親要素を基準 */
-  top: 0;                              /* 上限より表示 */
-  left: -35px;                         /* 箇条書きリストの左側に表示 */
-  background: #999999;                 /* マークの色 */
-  content: counter(ctr-ranking, decimal); /* カウンタ追加 */
-  counter-increment: ctr-ranking;      /* カウンタの増分指定 */
-  color: #000;                         /* 文字の色の指定 */
-  font-size: 10px;                     /* 文字サイズの指定 */
-  padding: 5px 10px;                   /* 余白の指定 */
+.ranking_name {
+  font-size: 30px;
+  padding-left: 20px;
 }
