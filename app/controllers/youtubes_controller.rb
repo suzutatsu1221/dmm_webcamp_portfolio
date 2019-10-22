@@ -19,7 +19,7 @@ class YoutubesController < ApplicationController
 			#description: string,
 			#published_at: datetime
 			#videoLicense: string.youtube
-			statistics: viewCount
+			#statistics: viewCount
 		}
 		service.list_searches(:snippet, opt)
 
