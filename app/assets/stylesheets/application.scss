@@ -17,33 +17,13 @@
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";
 
- .sign_up_subject {
- 	display: inline-block;
- 	margin-right: 25px;
- }
- .sign_up_items{
- 	display: inline-block;
- }
-
-input[type="text"],
-     [type="email"]
-     [type="date_select"] {
-        width: 150px;
-        height: 30px;
-        font-size: 18px;
-    }
-
-select:valid {
-  height: 30px;
-  width: 150px;
-  font-size: 18px;
-}
+/* search_page */
 input[type="submit" i] {  /* searchページの検索ボタン*/
   position: relative;
   background-color: #f7d034;
   border-radius: 4px;
-  line-height: 30px;
-  width:100px;
+  line-height: 50px;
+  width:150px;
   box-shadow: 0 3px 0 #f7ba59;
   -webkit-transition: none;
   transition: none;
@@ -91,9 +71,49 @@ input[type="submit" i]:active { /* searchページの検索ボタンを押した
 p {
   font-size: 16px; /* シニア層が見やすい大きさ16px */
 }
+li {
+  font-size: 20px;
+  line-height: 100;
+}
 
 
 /* sign_up */
 .sign_up_field {
   margin-top: 20px;
+}
+.sign_up_subject {
+  display: inline-block;
+  margin-right: 25px;
+}
+ .sign_up_items{
+  display: inline-block;
+}
+input[type="text"],
+     [type="email"]
+     [type="date_select"] {
+        width: 150px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+select:valid {
+  height: 30px;
+  width: 150px;
+  font-size: 18px;
+}
+
+/*sign_in*/
+.sign_in_field {
+  margin-top: 20px;
+}
+.sign_in_button {
+  width:60px;
+}
+
+/* header */
+.navbar-default {
+  background-color: #fff;
+}
+.fas {
+  color: green;
 }

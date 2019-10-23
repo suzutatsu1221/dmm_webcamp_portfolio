@@ -11,10 +11,26 @@
             <%= link_to image_tag('/images/logo.png', :size =>'200x100'), root_path %>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="h-100"><%= link_to "ログイン", new_user_session_path %></li>
-                <li><%= link_to "動画を検索する", youtube_search_path %></li>
-                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <div>
+                <p>ようこそ<%= current_user.last_name %> <%= current_user.first_name%>さん</p>
+            </div>
+            <ul class="nav navbar-nav pull-right">
+                <li><%= link_to root_path do %>
+                    <i class="fas fa-home">最初のページに戻る</i>
+                    <% end %>
+                </li>
+                <li><%= link_to youtube_search_path do %>
+                    <i class="fas fa-search">動画を検索する</i>
+                    <% end %>
+                </li>
+                <li><%= link_to "#" do %>
+                    <i class="fas fa-thumbs-up">いいねした動画一覧</i>
+                    <% end %>
+                </li>
+                <li><%= link_to destroy_user_session_path, :method => :delete do %>
+                    <i class="fas fa-sign-out-alt">ログアウト</i>
+                    <% end %>
+                </li>
             </ul>
         </div>
     </div>
@@ -29,13 +45,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%= link_to image_tag('/images/logo.png', :size =>'200x100'), root_path %>
+            <%= link_to image_tag('/images/logo.png', :size =>'200x80'), root_path %>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><%= link_to "ログイン", new_user_session_path %></li>
-                <li class="active"><%= link_to "新規登録", new_user_registration_path %></li>
-                <li><%= link_to "動画を検索する", youtube_search_path %></li>
+            <ul class="nav navbar-nav pull-right">
+                <li><%= link_to root_path do %>
+                    <i class="fas fa-home">最初のページに戻る</i>
+                    <% end %>
+                </li>
+                <li><%= link_to new_user_session_path do %>
+                    <i class="fas fa-sign-in-alt">ログイン</i>
+                    <% end %>
+                </li>
+                <li><%= link_to new_user_registration_path do %>
+                    <i class="fas fa-user-plus">新規登録</i>
+                    <% end %>
+                </li>
+                <li><%= link_to youtube_search_path do %>
+                    <i class="fas fa-search">動画を検索する</i>
+                    <% end %>
+                </li>
             </ul>
         </div>
     </div>
