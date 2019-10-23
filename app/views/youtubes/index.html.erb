@@ -7,28 +7,29 @@
   <%= submit_tag("検索する") %>
 <% end %>
 
-
-<% @youtube_data.items.each do |item| %>
-  <% snippet = item.snippet %>
+<% @test.each do |test| %>
   <table class="searched_container">
         <tr>
         	<td>
-  	            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= test[:video_id]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   	        </td>
   	        <td>
   	        	<div class="searched_items_detail">
   	        	    <div class="searched_items_detail_top">
-  	                    <h2 class="searched_items_title"><%= snippet.title %></h2>
-                        <p class="searched_items_description"><%= snippet.description %></p>
+  	                    <h2 class="searched_items_title"><%= test[:title] %></h2>
+                        <p class="searched_items_description"><%= test[:description] %></p>
                     </div>
                     <div class="searched_items_detail_bottom">
-                        <p class="searched_items_channel_title">チャンネル名：<%= snippet.channel_title %></p>
-                        <p class="searched_items_published_at">投稿日時：<%= snippet.published_at %></p>
+                        <p class="searched_items_channel_title">チャンネル名：<%= test[:channel_title] %></p>
+                        <p class="searched_items_published_at">投稿日時：<%= test[:published_at] %></p>
                     </div>
                 </div>
             </td>
         </tr>
     </table>
 <% end %>
+<%= paginate @test %>
+
+
 
 
