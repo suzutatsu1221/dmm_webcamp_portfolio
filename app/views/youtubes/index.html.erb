@@ -14,7 +14,7 @@
                     </div>
                     <div class="searched_items_detail_bottom">
                         <p class="searched_items_channel_title">チャンネル名：<%= test[:channel_title] %></p>
-                        <p class="searched_items_published_at">投稿日時：<%= test[:published_at] %></p>
+                        <p class="searched_items_published_at">投稿日時：<%= test[:published_at].strftime("%Y年%-m月%-d日") %></p>
                     </div>
                 </div>
             </td>
