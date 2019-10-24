@@ -1,18 +1,7 @@
-<div><%= render '/shared/header' %></div>
-<div><% breadcrumb :search %></div>
+<% breadcrumb :search %>
 <div class="search_container">
     <div style="width:50%; float:left;">
-        <section>
-            <h2>キーワードで探す</h2>
-                <%= form_tag("/youtube/index", method: "get") do %>
-                <div class="keyword_items">
-                    <i class="fas fa-arrow-down"></i><%= label_tag(:search, "キーワードを入力してください") %>
-                    <div><%= text_field_tag(:search) %>
-                        <span style="padding-left: 20px;"><%= submit_tag("探す") %></span>
-                    </div>
-                </div>
-                <% end %>
-            </section>
+
         <section style="padding-top: 50px;">
             <h2>人気のジャンルから探す</h2>
             <h3 class="genres_icon"><i class="fas fa-walking"></i>健康</h3>

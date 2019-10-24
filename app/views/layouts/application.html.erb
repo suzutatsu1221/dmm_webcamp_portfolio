@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= breadcrumbs pretext: "You are here: ", separator: " &rsaquo; " %>
-    <%= yield %>
+  <%= render '/shared/header' %>
+  <%= breadcrumbs separator: " &rsaquo; " , :class => 'breadcrumbs_text' %>
+  <%= render '/shared/search_form' %>
+  <%= yield %>
   </body>
 </html>

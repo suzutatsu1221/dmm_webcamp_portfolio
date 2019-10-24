@@ -1,6 +1,5 @@
 class YoutubesController < ApplicationController
 	GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
-	# PER = 10
 
 	def find_videos(keyword, after: 1.year.ago, before: Time.now)
 		service = Google::Apis::YoutubeV3::YouTubeService.new
@@ -10,14 +9,12 @@ class YoutubesController < ApplicationController
 		opt = {
 			q: keyword,
 			type: 'video',
-			max_results: 20,
+			max_results: 3,
 			order: :viewCount,
 			page_token: next_page_token,
 			published_after: after.iso8601,
 			published_before: before.iso8601,
 			#safeSearch: :moderate,
-			#channelTitle: :string  #入れるとエラー出る
-			#description: string,
 			#published_at: datetime
 			#videoLicense: string.youtube
 			#statistics: viewCount
