@@ -17,6 +17,17 @@
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";
 
+@charset "UTF-8";
+/* リセットCSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #FDF5E6;
+}
 body {
   background-color: #FDF5E6;
 }
@@ -125,4 +136,13 @@ select:valid {
 /* gretel */
 .breadcrumbs_text {
   font-size: 16px;
+}
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
 }

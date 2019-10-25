@@ -11,3 +11,12 @@ function update(e) {
 	e.target.validationMessage;
 	console.log(type, validationMessage);
 }
+
+$(function(){
+	$('#menu').hover(function(){
+		$(this.)next('p').show();
+	}, function(){
+		$(this).next('p').hide();
+	});
+});
+

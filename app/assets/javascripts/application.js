@@ -16,3 +16,49 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+// indexページの上に戻る //
+$(function(){
+	$('#back a').on('click', function(){
+		$('body, html').animate({
+			scrollTop:0
+		}, 800);
+		    return false;
+	});
+});
+
+$(function(){
+	$('#ranking_container').mouseover(function(){
+		$('#ranking_comment').show();
+	});
+
+	$('#ranking_container').mouseout(function(){
+		$('#ranking_comment').hide();
+	});
+});
+
+$(function(){
+	$('#genre_container').mouseover(function(){
+		$('#genre_comment').show();
+	});
+
+	$('#genre_container').mouseout(function(){
+		$('#genre_comment').hide();
+	});
+});
+
+$(function(){
+	$('#keyword_container').mouseover(function(){
+		$('#keyword_comment').show();
+	});
+
+	$('#keyword_container').mouseout(function(){
+		$('#keyword_comment').hide();
+	});
+});
+
+
+
+
+
+
