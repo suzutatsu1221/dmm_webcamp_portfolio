@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";
 
+body {
+  background-color: #FDF5E6;
+}
+
 /* search_page */
 input[type="submit" i] {  /* searchページの検索ボタン*/
   position: relative;

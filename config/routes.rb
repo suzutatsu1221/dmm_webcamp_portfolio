@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
   get '/youtube/search', to: 'youtubes#search'
   get '/youtube/index', to: 'youtubes#index'
+  resource :video_favorites, only: [:create, :destroy]
 end
 

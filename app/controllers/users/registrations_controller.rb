@@ -11,7 +11,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
    def create
-     super
+     #@user = User.new(last_name: params[:last_name], first_name: params[:first_name], email: params[:email], sex: params[:sex], birthday: params[:birthday], password: paramas[:password])
+     #if @user.save
+    #   flash[:notice] = "ユーザー登録が完了しました"
+    #   redirect_to(root_path)
+    # else
+    #   redirect_to(new_user_registration_path)
    end
 
   # GET /resource/edit

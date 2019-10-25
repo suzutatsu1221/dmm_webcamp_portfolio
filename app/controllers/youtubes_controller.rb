@@ -24,7 +24,9 @@ class YoutubesController < ApplicationController
 	end
 
 	def index
+		#データ取ってくる
 		@youtube_data = find_videos(params[:search])
+
 		#配列に入れる
 		array = []
 		@youtube_data.items.each do |item|
@@ -36,6 +38,7 @@ class YoutubesController < ApplicationController
 				video_id: item.id.video_id
 			})
 		end
+
 		#ページネーション
 		@test = Kaminari.paginate_array(array).page(params[:page]).per(10)
 
