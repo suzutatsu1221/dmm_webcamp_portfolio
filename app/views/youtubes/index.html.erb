@@ -28,9 +28,10 @@
         </tr>
     </table>
 <% end %>
-<span id="back"><a href="#">このページの一番上に戻る</a></span>
-<%= paginate @test %>
-
+<span id="back"><a href="#" style="font-size: 20px;"><i class="fas fa-arrow-circle-up fa-3x"></i>ここを押すと、このページの一番上に戻ります。</a></span>
+<div style="margin: 0 auto;">
+    <%= paginate @test %>
+</div>
 
 
 

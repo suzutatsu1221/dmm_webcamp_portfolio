@@ -6,6 +6,7 @@
             <h2>キーワードで探す</h2>
                 <div id="keyword_comment">
                     <p style="font-size: 16px; color: green;">検索窓にキーワードを入力し、検索するボタンを押してください</p>
+                    <p style="font-size: 16px; color: green;">※複数のキーワードでも検索できます</p>
                 </div>
                 <%= form_tag("/youtube/index", method: "get") do %>
                     <%= label_tag(:search, "キーワード") %>
@@ -19,25 +20,27 @@
                     <p style="font-size: 16px; color: green;">人気のジャンルをで分けています</p>
                     <p style="font-size: 16px; color: green;">キーワードを押すと検索結果が表示されます</p>
                 </div>
-            <h3 class="genres_icon"><i class="fas fa-walking"></i>健康</h3>
+            <h3 class="genres_icon"><i class="fas fa-walking"></i>健康<i class="fas fa-walking"></i></h3>
                 <%= link_to "ウォーキング", youtube_index_path(:search =>"ウォーキング"), :class => "genres_items" %>
                 <%= link_to "ヨガ", youtube_index_path(:search =>"ヨガ"), :class => "genres_items" %>
                 <%= link_to "筋トレ", youtube_index_path(:search =>"筋トレ"), :class => "genres_items" %>
-            <h3 class="genres_icon"><i class="fas fa-baseball-ball"></i>スポーツ</h3>
+            <h3 class="genres_icon"><i class="fas fa-baseball-ball"></i>スポーツ<i class="fas fa-baseball-ball"></i></h3>
                 <%= link_to "ゴルフ", youtube_index_path(:search =>"ゴルフ"), :class => "genres_items" %>
                 <%= link_to "水泳", youtube_index_path(:search =>"水泳"), :class => "genres_items" %>
                 <%= link_to "テニス", youtube_index_path(:search =>"テニス"), :class => "genres_items" %>
-            <h3 class="genres_icon">もの作り</h3>
+                <%= link_to "ボウリング", youtube_index_path(:search =>"ボウリング"), :class => "genres_items" %>
+                <%= link_to "卓球", youtube_index_path(:search =>"卓球"), :class => "genres_items" %>
+            <h3 class="genres_icon"><i class="fas fa-drafting-compass"></i>もの作り<i class="fas fa-drafting-compass"></i></h3>
                 <%= link_to "日曜大工", youtube_index_path(:search =>"日曜大工"), :class => "genres_items" %>
                 <%= link_to "手芸", youtube_index_path(:search =>"手芸"), :class => "genres_items" %>
-                <%= link_to "料理", youtube_index_path(:search =>"料理"), :class => "genres_items" %>
-                <%= link_to "お菓子", youtube_index_path(:search =>"お菓子作り"), :class => "genres_items" %>
             <h3 class="genres_icon">その他</h3>
                 <%= link_to "英語", youtube_index_path(:search =>"英語"), :class => "genres_items" %>
                 <%= link_to "絵画", youtube_index_path(:search =>"絵画"), :class => "genres_items" %>
                 <%= link_to "旅行", youtube_index_path(:search =>"旅行"), :class => "genres_items" %>
                 <%= link_to "囲碁", youtube_index_path(:search =>"囲碁"), :class => "genres_items" %>
                 <%= link_to "将棋", youtube_index_path(:search =>"将棋"), :class => "genres_items" %>
+                <%= link_to "料理", youtube_index_path(:search =>"料理"), :class => "genres_items" %>
+                <%= link_to "お菓子", youtube_index_path(:search =>"お菓子作り"), :class => "genres_items" %>
         </section>
     </div>
 
