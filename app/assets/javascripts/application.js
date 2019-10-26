@@ -57,8 +57,29 @@ $(function(){
 	});
 });
 
+/*
+const $form =
+document.getElementById('form');
 
 
+$form.addEventListener('change', update);
+$form.addEventListener('input', update);
+
+function update(e) {
+	let type = e.target.type;
+	let validationMessage =
+	e.target.validationMessage;
+	console.log(type, validationMessage);
+}
+*/
+
+$("input[last_name, first_name]").blur(function(){
+	if($(this).val() == ""){
+		alert('名前を入力してください')
+	} else if(!$(this).val().match(/^[ァ-ンヴー]*$/)) {
+		alert('全角カタカナで入力してください')
+	}
+});
 
 
 
