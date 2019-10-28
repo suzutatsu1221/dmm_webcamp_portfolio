@@ -73,7 +73,7 @@ function update(e) {
 }
 */
 
-$("input[last_name, first_name]").blur(function(){
+$("input[last_name], input[first_name]").blur(function(){
 	if($(this).val() == ""){
 		alert('名前を入力してください')
 	} else if(!$(this).val().match(/^[ァ-ンヴー]*$/)) {
