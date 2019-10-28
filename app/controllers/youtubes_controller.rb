@@ -1,7 +1,7 @@
 class YoutubesController < ApplicationController
 	GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
-	def find_videos(keyword, after: 1.year.ago, before: Time.now)
+	def find_videos(keyword, after: 2.year.ago, before: Time.now)
 		service = Google::Apis::YoutubeV3::YouTubeService.new
 		service.key = GOOGLE_API_KEY
 
@@ -9,7 +9,7 @@ class YoutubesController < ApplicationController
 		opt = {
 			q: keyword,
 			type: 'video',
-			max_results: 3,
+			max_results: 50,
 			order: :viewCount,
 			page_token: next_page_token,
 			published_after: after.iso8601,
