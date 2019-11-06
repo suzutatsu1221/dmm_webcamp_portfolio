@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   redirect_to(root_path)
     # else
     #   redirect_to(new_user_registration_path)
+    super
    end
 
   # GET /resource/edit
