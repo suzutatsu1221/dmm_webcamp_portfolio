@@ -81,5 +81,20 @@ $("input[last_name], input[first_name]").blur(function(){
 	}
 });
 
+function showSupportMessage(last_name) {
+    if (!last_name.value) {
+        document.getElementById('error_last_name').innerHTML='お名前を入力してください。';
+    } else {
+        document.getElementById('error_last_name').innerHTML='';
+    }
+    if (last_name.value.match(/^[ｦ-ﾟ]*$/)){
+    	document.getElementById('error_last_name').innerHTML='';
+    }else {
+    	document.getElementById('error_last_name').innerHTML='半角カタカナで入力してください';
+    }
+}
+
+
+
 
 

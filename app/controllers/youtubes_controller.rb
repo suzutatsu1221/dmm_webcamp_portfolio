@@ -13,11 +13,7 @@ class YoutubesController < ApplicationController
 			order: :viewCount,
 			page_token: next_page_token,
 			published_after: after.iso8601,
-			published_before: before.iso8601,
-			#safeSearch: :moderate,
-			#published_at: datetime
-			#videoLicense: string.youtube
-			#statistics: viewCount
+			published_before: before.iso8601
 		}
 		service.list_searches(:snippet, opt)
 
@@ -40,7 +36,7 @@ class YoutubesController < ApplicationController
 		end
 
 		#ページネーション
-		@test = Kaminari.paginate_array(array).page(params[:page]).per(10)
+		@searched_results = Kaminari.paginate_array(array).page(params[:page]).per(10)
 
 		#検索ランキング
 		@search_word = Search.find_by(search_name: params[:search])

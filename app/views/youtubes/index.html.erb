@@ -7,21 +7,21 @@
     <% end %>
 </div>
 
-<% @test.each do |test| %>
+<% @searched_results.each do |searched_result| %>
   <table class="searched_container">
         <tr>
         	<td>
-  	            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= test[:video_id]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= searched_result[:video_id]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   	        </td>
   	        <td>
   	        	<div class="searched_items_detail">
   	        	    <div class="searched_items_detail_top">
-  	                    <h2 class="searched_items_title"><%= test[:title] %></h2>
-                        <p class="searched_items_description"><%= test[:description] %></p>
+  	                    <h2 class="searched_items_title"><%= searched_result[:title] %></h2>
+                        <p class="searched_items_description"><%= searched_result[:description] %></p>
                     </div>
                     <div class="searched_items_detail_bottom">
-                        <p class="searched_items_channel_title">チャンネル名：<%= test[:channel_title] %></p>
-                        <p class="searched_items_published_at">投稿日時：<%= test[:published_at].strftime("%Y年%-m月%-d日") %></p>
+                        <p class="searched_items_channel_title">チャンネル名：<%= searched_result[:channel_title] %></p>
+                        <p class="searched_items_published_at">投稿日時：<%= searched_result[:published_at].strftime("%Y年%-m月%-d日") %></p>
                     </div>
                 </div>
             </td>
@@ -30,7 +30,7 @@
 <% end %>
 <span id="back"><a href="#" style="font-size: 20px;"><i class="fas fa-arrow-circle-up fa-3x"></i>ここを押すと、このページの一番上に戻ります。</a></span>
 <div style="margin: 0 auto;">
-    <%= paginate @test %>
+    <%= @searched_results %>
 </div>
 
 
