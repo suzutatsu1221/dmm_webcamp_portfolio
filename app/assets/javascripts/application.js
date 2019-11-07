@@ -17,15 +17,31 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// indexページの上に戻る //
 $(function(){
-	$('#back a').on('click', function(){
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 100){
+			$("#back").fadeIn();
+		} else {
+			$("#back").fadeOut();
+		}
+	});
+		$('#back').on('click', function(){
+		    $('body, html').animate({
+			    scrollTop:0
+		        }, 800);
+	});
+});
+
+
+/*// indexページの上に戻る //
+$(function(){
+	$('#back').on('click', function(){
 		$('body, html').animate({
 			scrollTop:0
 		}, 800);
 		    return false;
 	});
-});
+});*/
 
 $(function(){
 	$('#ranking_container').mouseover(function(){
