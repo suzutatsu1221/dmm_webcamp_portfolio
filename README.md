@@ -1,24 +1,44 @@
-# README
+# Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+めっけた      シニア層向けのYoutube動画検索サイト
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# Description
 
-* Configuration
+Youtube  data APIを用い、動画検索機能を実装しております。シニア層向けということでシンプルなUIを意識し、機能を詰め込みすぎないよう留意しました。
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Dependency
 
-* ...
+ruby 2.5.5
+
+rails 5.2.3
+
+jquery 
+
+youtube data API
+
+
+
+
+
+# Demo
+
+
+
+
+
+[キーワードで検索する](https://youtu.be/GGoSqak1Epo)
+
+
+
+[人気ジャンルから探す](https://youtu.be/BcePyeBVGbM)
+
+
+
+[人気ワードから探す](https://youtu.be/QZuKrhEyBbQ)
+
