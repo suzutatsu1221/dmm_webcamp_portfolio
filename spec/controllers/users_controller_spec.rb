@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
         context "トップページが正しく表示される" do
             render_views
             it 'タイトルが正しく表示される' do
-                expect(response.body).to include('動画')
+                expect(response.body).to include("動画")
             end
         end
     end

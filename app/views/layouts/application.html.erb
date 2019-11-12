@@ -12,6 +12,8 @@
   <body>
   <%= render '/shared/header' %>
   <%= breadcrumbs separator: " &rsaquo; " , :class => 'breadcrumbs_text' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
   </body>
 </html>

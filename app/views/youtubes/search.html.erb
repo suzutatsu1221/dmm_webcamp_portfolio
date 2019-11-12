@@ -46,22 +46,22 @@
 
     <div style="width:50%; float:left;">
         <section  id="ranking_container">
-	        <h2>検索ワードランキング</h2>
+            <h2>検索ワードランキング</h2>
                 <div id="ranking_comment">
                     <p style="font-size: 16px; color: green;">このサイト内で多く検索されているキーワード上です</p>
                     <p style="font-size: 16px; color: green;">キーワードを押すと検索結果が表示されます</p>
                 </div>
-	        <table>
-		        <% @search_ranks.each.with_index do |note,i| %>
-		        <tr style="line-height:60px">
-			        <td>
-				        <%= "第#{ i+1 }位" %>
-			        </td>
-			        <td class="ranking_name">
-	                    <%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %>
-	                </td>
-	            </tr>
-	            <% end %>
+            <table>
+                <% @search_ranks.each.with_index do |note,i| %>
+                <tr style="line-height:60px">
+                    <td>
+                        <%= "第#{ i+1 }位" %>
+                    </td>
+                    <td class="ranking_name">
+                        <%= link_to "#{note.search_name}", youtube_index_path(:search => "#{note.search_name}") %>
+                    </td>
+                </tr>
+                <% end %>
             </table>
         </section>
     </div>
