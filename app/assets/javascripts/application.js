@@ -62,44 +62,4 @@ $(function(){
 	});
 });
 
-/*
-const $form =
-document.getElementById('form');
-
-
-$form.addEventListener('change', update);
-$form.addEventListener('input', update);
-
-function update(e) {
-	let type = e.target.type;
-	let validationMessage =
-	e.target.validationMessage;
-	console.log(type, validationMessage);
-}
-*/
-
-$("input[last_name], input[first_name]").blur(function(){
-	if($(this).val() == ""){
-		alert('名前を入力してください')
-	} else if(!$(this).val().match(/^[ァ-ンヴー]*$/)) {
-		alert('全角カタカナで入力してください')
-	}
-});
-
-function showSupportMessage(last_name) {
-    if (!last_name.value) {
-        document.getElementById('error_last_name').innerHTML='お名前を入力してください。';
-    } else {
-        document.getElementById('error_last_name').innerHTML='';
-    }
-    if (last_name.value.match(/^[ｦ-ﾟ]*$/)){
-    	document.getElementById('error_last_name').innerHTML='';
-    }else {
-    	document.getElementById('error_last_name').innerHTML='半角カタカナで入力してください';
-    }
-}
-
-
-
-
 

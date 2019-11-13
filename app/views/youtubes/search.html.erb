@@ -2,7 +2,7 @@
 
 <div class="search_container">
     <div style="width:50%; float:left;">
-        <section id="keyword_container">
+        <div id="keyword_container">
             <h2>キーワードで探す</h2>
                 <div id="keyword_comment">
                     <p style="font-size: 16px; color: green;">検索窓にキーワードを入力し、検索するボタンを押してください</p>
@@ -13,11 +13,16 @@
                     <%= text_field_tag(:search) %>
                     <%= submit_tag("検索する") %>
                 <% end %>
-        </section>
+        </div>>
+
+
+
+
+
         <section style="padding-top: 50px;" id="genre_container">
             <h2>人気のジャンルから探す</h2>
                 <div id="genre_comment">
-                    <p style="font-size: 16px; color: green;">人気のジャンルをで分けています</p>
+                    <p style="font-size: 16px; color: green;">人気のジャンルで分けています</p>
                     <p style="font-size: 16px; color: green;">キーワードを押すと検索結果が表示されます</p>
                 </div>
             <h3 class="genres_icon"><i class="fas fa-walking"></i>健康<i class="fas fa-walking"></i></h3>

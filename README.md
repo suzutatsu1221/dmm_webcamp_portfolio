@@ -42,3 +42,17 @@ youtube data API
 
 [人気ワードから探す](https://youtu.be/QZuKrhEyBbQ)
 
+
+
+
+
+# References
+
+[youtube data API について](https://developers.google.com/youtube/v3/getting-started?hl=ja)
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@
     <% end %>
 </div>
 
+
 <% @searched_results.each do |searched_result| %>
   <table class="searched_container">
         <tr>
@@ -23,14 +24,14 @@
                         <p class="searched_items_channel_title">チャンネル名：<%= searched_result[:channel_title] %></p>
                         <p class="searched_items_published_at">投稿日時：<%= searched_result[:published_at].strftime("%Y年%-m月%-d日") %></p>
                     </div>
-                </div>
+              </div>
             </td>
         </tr>
-    </table>
-<% end %>
-<a href="#" id="back" style="font-size: 20px;"><i class="fas fa-arrow-circle-up fa-3x"></i></a>
-<div style="margin: 0 auto;">
-    <%= @searched_results %>
+  </table>
+  <% end %>
+<a id="back" style="font-size: 20px;"><i class="fas fa-arrow-circle-up fa-3x"></i></a>
+<div>
+   <%= paginate @searched_results %>
 </div>
 
 
